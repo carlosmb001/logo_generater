@@ -4,11 +4,17 @@ let fs = require('fs');
 
 const questions = [
     {
-        type: 'maxlength-input',
-        name: 'title',
-        message: 'Type in three characters for your logo:',
-        maxLength: 3
+    name: 'title',
+    message: 'Type in three characters for your logo:',
+    type: 'maxlength-input',
+    maxLength: 3
     },
+    {
+    name: 'input',
+    message: 'What text color? (Enter the)
+    }
+
+
 ];
 
 function writeToFile( fileName, data){

@@ -4,17 +4,27 @@ let fs = require('fs');
 
 const questions = [
     {
-    name: 'title',
-    message: 'Type in three characters for your logo:',
-    type: 'maxlength-input',
-    maxLength: 3
+      name: 'title',
+      message: 'Type in three characters for your logo:',
+      type: 'maxlength-input',
+      maxLength: 3
     },
     {
-    name: 'input',
-    message: 'What text color? (Enter the)
+      name: 'text-color',
+      message: 'Choose a text color?',
+      type: 'input',
+    },
+    {
+      name: "shape",
+      type: "list",
+      message: "What shape would you like the logo to render?",
+      choices: ["Triangle", "Square", "Circle"],
+    },
+    {
+      name: 'logo-color',
+      message: 'What color do you want the logo?',
+      type: 'input',
     }
-
-
 ];
 
 function writeToFile( fileName, data){

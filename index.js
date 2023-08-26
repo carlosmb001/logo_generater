@@ -1,6 +1,9 @@
-const generateLogo = require('./generateLogo');
+const generateLogo = require('./lib/shapes');
 let inquirer = require('inquirer');
 let fs = require('fs');
+const shapes = require("./lib/shapes");
+console.log(shapes);
+
 
 const questions = [
     {
@@ -10,7 +13,7 @@ const questions = [
       maxLength: 3
     },
     {
-      name: 'text-color',
+      name: 'titleColor',
       message: 'Choose a text color?',
       type: 'input',
     },
@@ -21,14 +24,14 @@ const questions = [
       choices: ["Triangle", "Square", "Circle"],
     },
     {
-      name: 'logo-color',
+      name: 'shapeColor',
       message: 'What color do you want the logo?',
       type: 'input',
     }
 ];
 
-function writeToFile( fileName, data){
-    fs.writeFile(fileName, data, (err) => {
+function createLogo( fileName, logo){
+    fs.writeFile(fileName, logo, (err) => {
         if (err) {
             console.log(err);
         } else {
@@ -37,10 +40,17 @@ function writeToFile( fileName, data){
     })
 };
 
+
 function init(){
     inquirer.prompt(questions).then((answers) => {
-        let generatedLogo = generateLogo(answers);
-        writeToFile('logo.svg',generatedLogo)
+      console.log(answers);
+      const Shape = shapes[answers.shape];
+      console.log(Shape);
+      const shape = new Shape(answers.title, answers.titleColor, answers.shapeColor);
+      console.log(shape);
+      const logo = shape.render();
+      console.log(logo);
+      createLogo('logo.svg',logo)
     });
 }
 

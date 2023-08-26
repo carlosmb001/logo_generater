@@ -2,8 +2,6 @@ const generateLogo = require('./lib/shapes');
 let inquirer = require('inquirer');
 let fs = require('fs');
 const shapes = require("./lib/shapes");
-console.log(shapes);
-
 
 const questions = [
     {
@@ -43,13 +41,9 @@ function createLogo( fileName, logo){
 
 function init(){
     inquirer.prompt(questions).then((answers) => {
-      console.log(answers);
       const Shape = shapes[answers.shape];
-      console.log(Shape);
       const shape = new Shape(answers.title, answers.titleColor, answers.shapeColor);
-      console.log(shape);
       const logo = shape.render();
-      console.log(logo);
       createLogo('logo.svg',logo)
     });
 }

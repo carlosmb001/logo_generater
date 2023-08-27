@@ -5,7 +5,7 @@ Generate simple logos for your projects with this command-line application, elim
 
 ![Generated Logo](assets/Logo_generator.gif)
 ## 🟥 Examples
-![Red Circle Logo](examples/Circle.svg)![Green Square Logo](examples/Square.svg)![Alt text](examples/Triangle.svg)
+![Red Circle Logo](examples/Circle.svg)![Green Square Logo](examples/Square.svg)![Alt text](examples/Triangle.svg)![Orange Circle Logo](examples/Circle2.svg)
 ## 🌟 Description
 
 As a freelance web developer, generating logos is made easy with the SVG Logo Maker. This Node.js application prompts users for text, colors, and shapes, allowing them to create simple logos that match their projects' styles. Say goodbye to relying on graphic designers for basic logos and hello to custom SVG logos at your fingertips.

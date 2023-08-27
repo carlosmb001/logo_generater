@@ -3,6 +3,7 @@ let inquirer = require('inquirer');
 let fs = require('fs');
 const shapes = require("./lib/shapes");
 
+//input questions
 const questions = [
     {
       name: 'title',
@@ -28,6 +29,7 @@ const questions = [
     }
 ];
 
+//creates logo
 function createLogo( fileName, logo){
     fs.writeFile(fileName, logo, (err) => {
         if (err) {
@@ -38,7 +40,7 @@ function createLogo( fileName, logo){
     })
 };
 
-
+// will run program
 function init(){
     inquirer.prompt(questions).then((answers) => {
       const Shape = shapes[answers.shape];
